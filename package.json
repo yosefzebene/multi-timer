@@ -1,6 +1,8 @@
 {
   "name": "multi-timer",
   "version": "0.1.0",
+  "author": "Yosef Zebene",
+  "homepage": "https://yosefzebene.github.io/multi-timer/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
