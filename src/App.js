@@ -51,7 +51,7 @@ function App() {
           {
             timers.map((timer, index) => {
               return ( 
-                <Col className='mb-3' key={index} xs={6} sm={4} md={4} lg={3}>
+                <Col className='mb-3' key={timer.targetTime} xs={6} sm={4} md={4} lg={3}>
                   <Timer index={index} label={timer.label} targetTime={timer.targetTime} removeTimer={removeTimer}/>
                 </Col>)
             })

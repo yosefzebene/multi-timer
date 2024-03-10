@@ -2,8 +2,20 @@ body {
     background-color: #E1E5F2;
 }
 
+@keyframes alarm {
+    from {background-color: #212529;}
+    to {background-color: #DB5461;}
+}
+
+.alarm-triggered {
+    animation-name: alarm;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 .navbar-brand, .timer-display {
-    font-family:"VT323", monospace;
+    font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;
     font-size: 36px;

@@ -9,7 +9,9 @@ const Timer = ({ index, label, targetTime, removeTimer }) => {
 
     const timerAlert = useCallback(() => {
         sound.play();
-    }, [sound]);
+
+        document.getElementsByClassName(`timer-${index}`)[0].classList.remove('bg-dark');
+    }, [index, sound]);
 
     useEffect(() => {
         const calculateTimer = () => {
@@ -40,7 +42,7 @@ const Timer = ({ index, label, targetTime, removeTimer }) => {
     };
 
     return (
-        <Card className="bg-dark text-white text-center">
+        <Card className={`bg-dark text-white text-center alarm-triggered timer-${index}`}>
             <Card.Body>
                 <Card.Title>{label}</Card.Title>
                 <Card.Text className='timer-display'>{timerDisplay}</Card.Text>
