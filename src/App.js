@@ -36,19 +36,26 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar>
+      <Navbar bg="dark" data-bs-theme="dark"  className='p-0'>
         <Container>
-            <Navbar.Brand>Multi Timer</Navbar.Brand>
-          </Container>
+            <div className='centered-div'>
+              <Navbar.Brand>Multi Timer</Navbar.Brand>
+            </div>
+        </Container>
       </Navbar>
-      <Container fluid>
+      <Container fluid className='mt-2'>
+        <Row className="justify-content-md-center mb-3">
+          <Col xs={12} sm={12} md={6} lg={4}><CreateTimer addTimer={addTimer}/></Col>
+        </Row>
         <Row>
           {
             timers.map((timer, index) => {
-              return <Col key={index} xs={6} sm={4} md={4} lg={3}><Timer index={index} label={timer.label} targetTime={timer.targetTime} removeTimer={removeTimer}/></Col>
+              return ( 
+                <Col className='mb-3' key={index} xs={6} sm={4} md={4} lg={3}>
+                  <Timer index={index} label={timer.label} targetTime={timer.targetTime} removeTimer={removeTimer}/>
+                </Col>)
             })
           }
-          <Col><CreateTimer addTimer={addTimer}/></Col>
         </Row>
       </Container>
     </div>

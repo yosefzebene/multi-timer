@@ -19,16 +19,18 @@ const CreateTimer = ({ addTimer }) => {
     };
 
     return (
-        <Card style={{width: '300px'}}>
+        <Card className="bg-dark text-white text-center">
             <Card.Body>
                 <Card.Title><Form.Control type='text' value={label} onChange={(e) => setLabel(e.target.value)}/></Card.Title>
-                <Stack direction="horizontal" gap={2}>
-                    <Form.Control type='number' min={0} value={hours} onChange={(e) => setHours(e.target.value)}/>
-                    :
-                    <Form.Control type='number' min={0} max={60} value={minutes} onChange={(e) => setMinutes(e.target.value)}/>
-                    :
-                    <Form.Control type='number' min={0} max={60} value={seconds} onChange={(e) => setSeconds(e.target.value)}/>
-                </Stack>
+                <Card.Text>
+                    <Stack direction="horizontal" gap={2}>
+                        <Form.Control type='number' min={0} value={hours} onChange={(e) => setHours(e.target.value)}/>
+                        :
+                        <Form.Control type='number' min={0} max={60} value={minutes} onChange={(e) => setMinutes(e.target.value)}/>
+                        :
+                        <Form.Control type='number' min={0} max={60} value={seconds} onChange={(e) => setSeconds(e.target.value)}/>
+                    </Stack>
+                </Card.Text>
                 <Button variant='success' onClick={handleStartTimerClick}>Start</Button>
             </Card.Body>
         </Card>

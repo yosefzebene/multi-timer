@@ -8,7 +8,6 @@ const Timer = ({ index, label, targetTime, removeTimer }) => {
     const sound = useMemo(() => new Audio(alarmSound), []);
 
     const timerAlert = useCallback(() => {
-        // Play sound
         sound.play();
     }, [sound]);
 
@@ -41,10 +40,10 @@ const Timer = ({ index, label, targetTime, removeTimer }) => {
     };
 
     return (
-        <Card style={{width: '300px'}}>
+        <Card className="bg-dark text-white text-center">
             <Card.Body>
                 <Card.Title>{label}</Card.Title>
-                <Card.Text>{timerDisplay}</Card.Text>
+                <Card.Text className='timer-display'>{timerDisplay}</Card.Text>
                 <Button variant='danger' onClick={handleStopTimerClick}>Cancel</Button>
             </Card.Body>
         </Card>
