@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const storedTimers = JSON.parse(localStorage.getItem('timers'));
-    setTimers(storedTimers);
+    storedTimers === null ? setTimers([]) : setTimers(storedTimers);
   }, []);
 
   useEffect(() => {
